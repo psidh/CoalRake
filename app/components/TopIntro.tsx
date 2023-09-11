@@ -63,7 +63,7 @@ const TopIntro: React.FC = () => {
                   dark:bg-gray-500 
                   focus:outline-none focus:ring-2 
                   focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Password"
+                  placeholder="Enter your password"
                   onSubmit={() => {
                     if (isLogin) {
                       signInWithEmailAndPassword(auth, email, password)
