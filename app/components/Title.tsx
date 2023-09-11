@@ -8,13 +8,13 @@ const Title: React.FC = () => {
         className="text-4xl md:text-6xl font-bold m-2 flex flex-row items-center justify-center
          text-yellow-600"
       >
-        C E N
+        C R N
       </h2>
       <h2
         className="text-2xl md:text-4xl font-semibold m-2 flex flex-row items-center justify-center
         "
       >
-        Coal Express Navigating{' '}
+        Coal Raker Navigating
       </h2>
     </section>
   );
