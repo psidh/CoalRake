@@ -1,7 +1,7 @@
-"use client"
-import React, { useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import Image from 'next/image';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Ambit';
@@ -24,32 +24,28 @@ const NavBar: React.FC<NavBarProps> = () => {
     <div>
       <div className="mx-8 lg:mx-20 flex justify-between font-semibold text-xl py-8 md:py-10">
         <div className="flex flex-row items-center justify-center font-semibold text-xl md:space-x-4">
-        <a
-          className="hover:scale-105 transition duration-300"
-          href="/"
-        >
-          <div className="flex  items-center ">
-            <span>Home</span>
-          </div>
-        </a>
-        {/* image of logos INDIA */}
+          <a className="hover:scale-105 transition duration-300" href="/">
+            <div className="flex  items-center ">
+              <span>Home</span>
+            </div>
+          </a>
+          {/* image of logos INDIA */}
 
-        <Image
-          src="/azadi.png"
-          alt="India"
-          width={100} // Set the desired width
-          height={60} // Set the desired height
-          className="rounded overflow-hidden"
-        />
+          <Image
+            src="/azadi.png"
+            alt="India"
+            width={100} // Set the desired width
+            height={60} // Set the desired height
+            className="rounded overflow-hidden"
+          />
 
-        <Image
-          src="/g20.webp"
-          alt="India"
-          width={100} // Set the desired width
-          height={60} // Set the desired height
-          className="rounded overflow-hidden"
-        />
-
+          <Image
+            src="/g20.webp"
+            alt="India"
+            width={100} // Set the desired width
+            height={60} // Set the desired height
+            className="rounded overflow-hidden"
+          />
         </div>
         <div className="gap-14 hidden lg:flex items-center">
           <a className="  hover:text-blue-600" href="/about">
