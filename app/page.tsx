@@ -14,8 +14,8 @@ export default function Home() {
         <div className="min-h-fit" style={{ fontFamily: 'Ambit, sans-serif' }}>
           <NavBar />
           <Title />
-          <TopIntro />
           <AboutSection />
+          <TopIntro />
           <Partner />
           <Footer />
         </div>

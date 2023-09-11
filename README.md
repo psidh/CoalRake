@@ -1,7 +1,7 @@
 
 # Smart India Hackathon 2023 Official Submission
 
-## ** CEM Coal Express Navigators **
+## CRM Coal Rake Navigator
 
 Team Name:
 - Prem Sai Verukuri
@@ -13,7 +13,7 @@ Team Name:
 
 ### Overview
 
-The "CEM Coal Express Navigators" project is a web application developed to optimize coal transportation from various mines to destination railway sidings. The goal of this project is to minimize demurrage charges incurred due to trains waiting for coal, ultimately saving costs and increasing the efficiency of coal transportation.
+The "CRN Coal Rake Navigators" project is a web application developed to optimize coal transportation from various mines to destination railway sidings. The goal of this project is to minimize demurrage charges incurred due to trains waiting for coal, ultimately saving costs and increasing the efficiency of coal transportation.
 
 ### Problem Statement
 
@@ -33,7 +33,7 @@ In the coal industry, trains (rakes) are used to transport coal from mines to ce
 
 - Backend:
   - Node.js (or your chosen backend technology)
-  - Database Management System (e.g., PostgreSQL, MongoDB)
+  - Database Management System (MongoDB)
 
 - Algorithms:
   - Dijkstra's Algorithm or A* Search for path optimization

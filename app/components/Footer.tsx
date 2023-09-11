@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
       <div className=" md:pt-4 md:pb-8 px-8 lg:px-36 flex lg:flex-row flex-col gap-6 lg:gap-0 justify-between items-center">
         <div className="flex gap-x-12 items-center justify-center">
           <Image
-            src={'/next.svg'}
+            src={'/logo.jpeg'}
             alt="Picture of the author"
             width={100}
             height={100}

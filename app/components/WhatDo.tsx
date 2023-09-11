@@ -12,7 +12,7 @@ const WhatDo: React.FC = () => {
           What We Do
         </h3>
         <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl text-justify">
-          At CEN Coal Express Navigators, we specialize in revolutionizing coal
+          At CRN Coal Raker Navigators, we specialize in revolutionizing coal
           logistics. Our digital platform provides real-time updates on coal
           availability at railway sidings, ensuring that trains are dispatched
           to the nearest location with sufficient coal. By optimizing coal
@@ -26,10 +26,10 @@ const WhatDo: React.FC = () => {
       </div>
       <div className="sm:w-1/2 flex justify-center items-center my-4 sm:mt-0">
         <Image
-          src="/indiamap.png"
-          alt="India"
-          width={270} // Adjust the desired width for smaller screens
-          height={189} // Adjust the desired height for smaller screens
+          src="/map.png"
+          alt="map"
+          width={1000} // Adjust the desired width for smaller screens
+          height={400} // Adjust the desired height for smaller screens
           className="rounded overflow-hidden"
         />
       </div>
