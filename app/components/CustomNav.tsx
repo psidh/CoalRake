@@ -8,7 +8,6 @@ import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
 import { getAuth, signOut } from 'firebase/auth';
 import { auth } from '../config.js';
 
-
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Ambit';
@@ -64,7 +63,7 @@ const CustomNav: React.FC<NavBarProps> = () => {
             Get Started
           </a>
           <a className="  hover:text-blue-600" href="/#blog">
-          Sign Out
+            Sign Out
           </a>
         </div>
         <svg
@@ -95,19 +94,19 @@ const CustomNav: React.FC<NavBarProps> = () => {
             Get Started
           </a>
           <a className="m-8   hover:text-blue-600" href="/">
-          <button
-          onClick={() => {
-            signOut(auth)
-              .then(() => {
-                navigator.replace('/');
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }}
-        >
-          Sign Out
-        </button>
+            <button
+              onClick={() => {
+                signOut(auth)
+                  .then(() => {
+                    navigator.replace('/');
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
+              }}
+            >
+              Sign Out
+            </button>
           </a>
         </div>
       )}
