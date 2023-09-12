@@ -9,7 +9,6 @@ import { getAuth, signOut } from 'firebase/auth';
 import { auth } from '../config.js';
 import CustomNav from '../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
 
-
 // Define a type for your data
 interface CoalData {
   region: string;
@@ -20,9 +19,7 @@ interface CoalData {
 }
 
 const Dashboard = () => {
-
   const navigator = useRouter();
-
 
   // Define state variables for your data and filters
   const [data, setData] = useState<CoalData[]>([]);
@@ -37,7 +34,7 @@ const Dashboard = () => {
       {
         region: 'Region 1',
         district: 'District A',
-        owner: 'Owner X', 
+        owner: 'Owner X',
         mineName: 'Mine 1',
         coalProduction: 100,
       },
@@ -176,46 +173,52 @@ const Dashboard = () => {
             </select>
           </div>
 
-
           {/* Add similar dropdowns for owner and mine */}
         </div>
 
         {/* Table to display filtered data */}
         <div className="overflow-x-auto">
           {filteredData.length > 0 ? (
-          <table className="w-full border border-rounded  text-center">
-            <thead className="bg-blue-200">
-              <tr>
-                <th className="p-2">Region</th>
-                <th className="p-2">District</th>
-                <th className="p-2">Owner</th>
-                <th className="p-2">Mine Name</th>
-                <th className="p-2">Coal Production</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-200 ">
-                  <td className="p-2 border border-gray-200">{item.region}</td>
-                  <td className="p-2 border border-gray-200">{item.district}</td>
-                  <td className="p-2 border border-gray-200">{item.owner}</td>
-                  <td className="p-2 border border-gray-200">{item.mineName}</td>
-                  <td className="p-2 border border-gray-200">{item.coalProduction}</td>
+            <table className="w-full border border-rounded  text-center">
+              <thead className="bg-blue-200">
+                <tr>
+                  <th className="p-2">Region</th>
+                  <th className="p-2">District</th>
+                  <th className="p-2">Owner</th>
+                  <th className="p-2">Mine Name</th>
+                  <th className="p-2">Coal Production</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          // Display a message when no matching rows are found
-          <div className="text-center text-2xl text-gray-500 mt-4">
-            No matching records found.
-          </div>
-        )}
-      </div>      
+              </thead>
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index} className="hover:bg-gray-200 ">
+                    <td className="p-2 border border-gray-200">
+                      {item.region}
+                    </td>
+                    <td className="p-2 border border-gray-200">
+                      {item.district}
+                    </td>
+                    <td className="p-2 border border-gray-200">{item.owner}</td>
+                    <td className="p-2 border border-gray-200">
+                      {item.mineName}
+                    </td>
+                    <td className="p-2 border border-gray-200">
+                      {item.coalProduction}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            // Display a message when no matching rows are found
+            <div className="text-center text-2xl text-gray-500 mt-4">
+              No matching records found.
+            </div>
+          )}
+        </div>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-    </div>
-
   );
 };
 

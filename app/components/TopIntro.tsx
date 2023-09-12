@@ -17,9 +17,9 @@ const TopIntro: React.FC = () => {
   const navigator = useRouter();
 
   return (
-    <div className='min-h-fit' style={{ fontFamily: 'Ambit, sans-serif' }}>
+    <div className="min-h-fit" style={{ fontFamily: 'Ambit, sans-serif' }}>
       <main>
-      <div
+        <div
           className="bg-cover bg-center mt-8 mb-8 flex flex-row-reverse sm:flex-col items-center justify-center sm:bg-left md:bg-center bg-opacity-60"
           style={{
             backgroundImage: 'url("/background.png")',
@@ -28,10 +28,10 @@ const TopIntro: React.FC = () => {
             minHeight: '100vh',
             backgroundSize: 'cover',
           }}
-      >
+        >
           <a href="/login">
             <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-6 px-12 rounded-full md:py-6 md:px-12 transition duration-300">
-              <span className='font-extrabold' >Get Started</span> 
+              <span className="font-extrabold">Get Started</span>
             </button>{' '}
           </a>
         </div>
