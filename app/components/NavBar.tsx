@@ -51,11 +51,11 @@ const NavBar: React.FC<NavBarProps> = () => {
           <a className="  hover:text-blue-600" href="/about">
             About
           </a>
-          <a className="  hover:text-blue-600" href="/#getstarted">
+          <a className="  hover:text-blue-600" href="/getstarted">
             Get Started
           </a>
-          <a className="  hover:text-blue-600" href="/#blog">
-            Log-In
+          <a className="  hover:text-blue-600" href="/login">
+            Log In
           </a>
         </div>
         <svg
