@@ -2,6 +2,13 @@
 import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation.js';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
+import { getAuth, signOut } from 'firebase/auth';
+import { auth } from '../config.js';
+
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Ambit';
@@ -13,7 +20,9 @@ interface NavBarProps {
   // Define props here if any
 }
 
-const NavBar: React.FC<NavBarProps> = () => {
+const CustomNav: React.FC<NavBarProps> = () => {
+  const navigator = useRouter();
+
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
   const toggleNav = () => {
@@ -55,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             Get Started
           </a>
           <a className="  hover:text-blue-600" href="/#blog">
-            Log-In
+          Sign Out
           </a>
         </div>
         <svg
@@ -85,8 +94,20 @@ const NavBar: React.FC<NavBarProps> = () => {
           <a className="hover:text-blue-600 m-8" href="/getstarted">
             Get Started
           </a>
-          <a className="m-8   hover:text-blue-600" href="/login">
-            Log In
+          <a className="m-8   hover:text-blue-600" href="/">
+          <button
+          onClick={() => {
+            signOut(auth)
+              .then(() => {
+                navigator.replace('/');
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }}
+        >
+          Sign Out
+        </button>
           </a>
         </div>
       )}
@@ -94,4 +115,4 @@ const NavBar: React.FC<NavBarProps> = () => {
   );
 };
 
-export default NavBar;
+export default CustomNav;

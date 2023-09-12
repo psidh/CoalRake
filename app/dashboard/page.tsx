@@ -2,6 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { useRouter } from 'next/navigation.js';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
+import { getAuth, signOut } from 'firebase/auth';
+import { auth } from '../config.js';
+import CustomNav from '../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
+
 
 // Define a type for your data
 interface CoalData {
@@ -13,6 +20,10 @@ interface CoalData {
 }
 
 const Dashboard = () => {
+
+  const navigator = useRouter();
+
+
   // Define state variables for your data and filters
   const [data, setData] = useState<CoalData[]>([]);
   const [regionFilter, setRegionFilter] = useState('');
@@ -107,7 +118,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <NavBar />
+      <CustomNav />
       <div className="min-h-screen bg-gray-100 p-4">
         <h1 className="text-2xl font-semibold mb-4">
           Coal Production Dashboard
@@ -200,8 +211,7 @@ const Dashboard = () => {
             No matching records found.
           </div>
         )}
-      </div>
-      
+      </div>      
     </div>
     <Footer />
     </div>

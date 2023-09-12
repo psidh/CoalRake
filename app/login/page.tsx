@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
 
+
 const Login: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
 
@@ -100,7 +101,7 @@ const Login: React.FC = () => {
                     signInWithEmailAndPassword(auth, email, password)
                       .then((userCredential) => {
                         const user = userCredential.user;
-                        navigator.replace('/data');
+                        navigator.replace('/dashboard');
                       })
                       .catch((error) => {
                         const errorCode = error.code;
