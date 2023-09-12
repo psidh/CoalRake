@@ -14,7 +14,7 @@ const Title: React.FC = () => {
         className="text-2xl md:text-4xl font-semibold m-2 flex flex-row items-center justify-center
         "
       >
-        Coal Raker Navigating
+        Coal Raker Navigators
       </h2>
     </section>
   );
