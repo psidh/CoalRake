@@ -1,132 +1,211 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
-const Dashboard: React.FC = () => {
-  type CoalProductionData = {
-    [key: string]: number; // Use a string as the key and assign a number as the value
-  };
+// Define a type for your data
+interface CoalData {
+  region: string;
+  district: string;
+  owner: string;
+  mineName: string;
+  coalProduction: number;
+}
 
-  // Define the initial state for dropdown selections
-  const initialState = {
-    state: '',
-    district: '',
-    companyName: '',
-    clusterId: '',
-    coalProductionPerDay: {Cluster1: 1000},
-  };
+const Dashboard = () => {
+  // Define state variables for your data and filters
+  const [data, setData] = useState<CoalData[]>([]);
+  const [regionFilter, setRegionFilter] = useState('');
+  const [districtFilter, setDistrictFilter] = useState('');
+  const [ownerFilter, setOwnerFilter] = useState('');
+  const [mineFilter, setMineFilter] = useState('');
 
-  // Dummy data object
-  const dummyData = {
-    state: ['State1', 'State2'],
-    district: {
-      State1: ['District1', 'District2'],
-      State2: ['District3', 'District4'],
-    },
-    companyName: {
-      State1: {
-        District1: ['CompanyA', 'CompanyB'],
-        District2: ['CompanyC', 'CompanyD'],
+  useEffect(() => {
+    // Mock data for demonstration purposes
+    const mockData: CoalData[] = [
+      {
+        region: 'Region 1',
+        district: 'District A',
+        owner: 'Owner X', 
+        mineName: 'Mine 1',
+        coalProduction: 100,
       },
-      State2: {
-        District3: ['CompanyE', 'CompanyF'],
-        District4: ['CompanyG', 'CompanyH'],
+      {
+        region: 'Region 1',
+        district: 'District B',
+        owner: 'Owner Y',
+        mineName: 'Mine 2',
+        coalProduction: 200,
       },
-    },
-    clusterId: {
-      mineA: ['Cluster1', 'Cluster2'],
-      mineB: ['Cluster3', 'Cluster4'],
-      mineC: ['Cluster5', 'Cluster6'],
-      // ... Define clusters for other companies
-    },
-    coalProductionPerDay: {
-      Cluster1: 1000,
-      Cluster2: 1200,
-      Cluster3: 800,
-      Cluster4: 1500,
-      Cluster5: 900,
-      Cluster6: 1100,
-      // ... Define production per day for other clusters
-    },
-  };
+      {
+        region: 'Region 1',
+        district: 'District C',
+        owner: 'Owner Z',
+        mineName: 'Mine 3',
+        coalProduction: 120,
+      },
+      {
+        region: 'Region3',
+        district: 'District D',
+        owner: 'Owner Z',
+        mineName: 'Mine 3',
+        coalProduction: 150,
+      },
+      {
+        region: 'Assam',
+        district: 'Dispur',
+        owner: 'Billionaire Premsai ',
+        mineName: 'PremSai Coaler',
+        coalProduction: 150,
+      },
+      // Add more data entries as needed
+    ];
 
-  // State variables to hold selected values
-  const [selectedValues, setSelectedValues] = useState(initialState);
+    setData(mockData);
 
-  // Event handler to update selected state
-  const handleStateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newState = event.target.value;
-    setSelectedValues({
-      ...selectedValues,
-      state: newState,
-    });
-  };
+    // Extract and set unique values for the dropdowns
+    const uniqueRegions = Array.from(
+      new Set(mockData.map((item) => item.region))
+    );
+    setUniqueOptions(uniqueRegions, setRegionFilter);
 
-  // Event handler to update selected district
-  const handleDistrictChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newDistrict = event.target.value;
-    setSelectedValues({
-      ...selectedValues,
-      district: newDistrict,
-    });
-  };
+    const uniqueDistricts = Array.from(
+      new Set(mockData.map((item) => item.district))
+    );
+    setUniqueOptions(uniqueDistricts, setDistrictFilter);
 
-  // Event handler to update selected company name
-  const handleCompanyNameChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
+    const uniqueOwners = Array.from(
+      new Set(mockData.map((item) => item.owner))
+    );
+    setUniqueOptions(uniqueOwners, setOwnerFilter);
+
+    const uniqueMines = Array.from(
+      new Set(mockData.map((item) => item.mineName))
+    );
+    setUniqueOptions(uniqueMines, setMineFilter);
+  }, []);
+
+  // Function to set unique options in a dropdown
+  const setUniqueOptions = (
+    options: string[],
+    setter: (value: string) => void
   ) => {
-    const newCompanyName = event.target.value;
-    setSelectedValues({
-      ...selectedValues,
-      companyName: newCompanyName,
-    });
+    setter(''); // Reset the filter
+    options.sort(); // Sort the options alphabetically
+    options.unshift(''); // Add an empty option
+    setter(options[0]); // Set the dropdown value to the first option
   };
 
-  // Event handler to update selected cluster ID
-  const handleClusterIdChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newClusterId = event.target.value;
-    setSelectedValues({
-      ...selectedValues,
-      clusterId: newClusterId,
-    });
-  };
-  
-  // Ensure selectedValues.clusterId is a valid key from coalProductionPerDay
-  const clusterId = selectedValues.clusterId as keyof typeof dummyData.coalProductionPerDay;
-
-  // Access the coal production per day using the valid key
-  const coalProductionPerDay = dummyData.coalProductionPerDay[clusterId];
-
-  // Calculate coal production per day and annual production based on selected parameters
-  const coalProductionAnnual = coalProductionPerDay * 365; // Assuming 365 days in a year
+  // Define a function to filter data based on dropdown selections
+  const filteredData = data.filter(
+    (item) =>
+      (!regionFilter || item.region === regionFilter) &&
+      (!districtFilter || item.district === districtFilter) &&
+      (!ownerFilter || item.owner === ownerFilter) &&
+      (!mineFilter || item.mineName === mineFilter)
+  );
 
   return (
     <div>
-      <h2>Coal Production Dashboard</h2>
-      <div>
-        <label htmlFor="state">Select State:</label>
-        <select
-          id="state"
-          name="state"
-          value={selectedValues.state}
-          onChange={handleStateChange}
-        >
-          <option value="">Select State</option>
-          {dummyData.state.map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
+      <NavBar />
+      <div className="min-h-screen bg-gray-100 p-4">
+        <h1 className="text-2xl font-semibold mb-4">
+          Coal Production Dashboard
+        </h1>
+        {/* Dropdown Filters */}
+        <div className="flex flex-col space-y-4 mb-4">
+          <div>
+            <select
+              value={regionFilter}
+              onChange={(e) => setRegionFilter(e.target.value)}
+              className="w-full bg-blue-50 border border-gray-300 rounded p-2"
+            >
+              <option value="">Select Region</option>
+              {Array.from(new Set(data.map((item) => item.region))).map(
+                (region, index) => (
+                  <option key={index} value={region}>
+                    {region}
+                  </option>
+                )
+              )}
+            </select>
+          </div>
+
+          <div>
+            <select
+              value={districtFilter}
+              onChange={(e) => setDistrictFilter(e.target.value)}
+              className="w-full bg-blue-50 border border-gray-300 rounded p-2"
+            >
+              <option value="">Select District</option>
+              {Array.from(new Set(data.map((item) => item.district))).map(
+                (district, index) => (
+                  <option key={index} value={district}>
+                    {district}
+                  </option>
+                )
+              )}
+            </select>
+          </div>
+
+          <div>
+            <select
+              value={ownerFilter}
+              onChange={(e) => setOwnerFilter(e.target.value)}
+              className="w-full bg-blue-50 border border-gray-300 rounded p-2"
+            >
+              <option value="">Select Owner</option>
+              {Array.from(new Set(data.map((item) => item.owner))).map(
+                (owner, index) => (
+                  <option key={index} value={owner}>
+                    {owner}
+                  </option>
+                )
+              )}
+            </select>
+          </div>
+
+
+          {/* Add similar dropdowns for owner and mine */}
+        </div>
+
+        {/* Table to display filtered data */}
+        <div className="overflow-x-auto">
+          {filteredData.length > 0 ? (
+          <table className="w-full border border-rounded  text-center">
+            <thead className="bg-blue-200">
+              <tr>
+                <th className="p-2">Region</th>
+                <th className="p-2">District</th>
+                <th className="p-2">Owner</th>
+                <th className="p-2">Mine Name</th>
+                <th className="p-2">Coal Production</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredData.map((item, index) => (
+                <tr key={index} className="hover:bg-gray-200 ">
+                  <td className="p-2 border border-gray-200">{item.region}</td>
+                  <td className="p-2 border border-gray-200">{item.district}</td>
+                  <td className="p-2 border border-gray-200">{item.owner}</td>
+                  <td className="p-2 border border-gray-200">{item.mineName}</td>
+                  <td className="p-2 border border-gray-200">{item.coalProduction}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          // Display a message when no matching rows are found
+          <div className="text-center text-2xl text-gray-500 mt-4">
+            No matching records found.
+          </div>
+        )}
       </div>
-      {/* Add dropdowns for District, Company Name, and Cluster ID */}
-      {/* Implement similar dropdowns as the State dropdown */}
-      {/* ... */}
-      <div>
-        <h3>Output:</h3>
-        <p>Coal Production per Day: {coalProductionPerDay} tons</p>
-        <p>Coal Production Annual: {coalProductionAnnual} tons</p>
-      </div>
+      
     </div>
+    <Footer />
+    </div>
+
   );
 };
 

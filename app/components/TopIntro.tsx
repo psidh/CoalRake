@@ -17,10 +17,10 @@ const TopIntro: React.FC = () => {
   const navigator = useRouter();
 
   return (
-    <div style={{ fontFamily: 'Ambit, sans-serif' }}>
+    <div className='min-h-fit' style={{ fontFamily: 'Ambit, sans-serif' }}>
       <main>
       <div
-          className="bg-cover bg-center mt-8 mb-8 flex flex-row-reverse sm:flex-col items-center justify-center sm:bg-left md:bg-center bg-opacity-90"
+          className="bg-cover bg-center mt-8 mb-8 flex flex-row-reverse sm:flex-col items-center justify-center sm:bg-left md:bg-center bg-opacity-60"
           style={{
             backgroundImage: 'url("/background.png")',
             backgroundRepeat: 'no-repeat',
