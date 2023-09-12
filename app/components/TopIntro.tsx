@@ -3,25 +3,23 @@ import { auth } from '../config.js';
 import { useRouter } from 'next/navigation.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const TopIntro: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
 
-
   useEffect(() => {
-    AOS.init({ 
+    AOS.init({
       delay: 100,
       offset: 100,
       duration: 700,
       once: false,
       mirror: true,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
     });
   }, []);
-
 
   const toggleLogin = () => {
     setIsLogin(!isLogin);
@@ -38,9 +36,11 @@ const TopIntro: React.FC = () => {
           <img src="/background.png" className="w-full h-1/2 rounded-md" />
           <div className="bg-black z-10 absolute w-full h-full top-0 rounded-r-md bg-opacity-0 hover:bg-opacity-30">
             <div className="w-full h-full flex top-0 absolute items-center justify-center opacity-0 hover:opacity-100">
-            <button className="bg-blue-700 hover:bg-black text-white font-bold py-2 px-6 rounded-full md:py-4 md:px-12 sm:py-1 sm:px-4 transition duration-200">
-              <span className="font-extrabold md:text-4xl text-lg ">Get Started</span>
-            </button>
+              <button className="bg-blue-700 hover:bg-black text-white font-bold py-2 px-6 rounded-full md:py-4 md:px-12 sm:py-1 sm:px-4 transition duration-200">
+                <span className="font-extrabold md:text-4xl text-lg ">
+                  Get Started
+                </span>
+              </button>
             </div>
           </div>
         </div>

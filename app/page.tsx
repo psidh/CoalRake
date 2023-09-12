@@ -18,7 +18,7 @@ export default function Home() {
           <AboutSection />
           <TopIntro />
           <Partner />
-           <Example />
+          <Example />
           <Footer />
         </div>
       </main>

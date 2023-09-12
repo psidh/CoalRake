@@ -1,27 +1,29 @@
-"use client"
-import React, { useEffect, useRef, useState } from "react";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 
 const WhatDo: React.FC = () => {
   useEffect(() => {
-    AOS.init({ 
+    AOS.init({
       delay: 100,
       offset: 100,
       duration: 700,
       once: false,
       mirror: true,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
     });
   }, []);
 
-
   return (
-    <section data-aos="fade-in" className="p-4 md:p-10 m-4 sm:m-16 sm:flex sm:items-center sm:justify-between">
+    <section
+      data-aos="fade-in"
+      className="p-4 md:p-10 m-4 sm:m-16 sm:flex sm:items-center sm:justify-between"
+    >
       <div className="sm:w-full md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-semibold mb-2 md:mb-4">
-        What Do We Do
+          What Do We Do
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl text-justify">
           At CRN Coal Raker Navigators, we specialize in revolutionizing coal
