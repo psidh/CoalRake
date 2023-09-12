@@ -1,25 +1,26 @@
-"use client";
+'use client';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default function Partner() {
-
-
   useEffect(() => {
-    AOS.init({ 
+    AOS.init({
       delay: 100,
       offset: 100,
       duration: 700,
       once: false,
       mirror: true,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
     });
   }, []);
 
   return (
-    <div data-aos="fade-in" className="flex flex-col justify-center items-center">
+    <div
+      data-aos="fade-in"
+      className="flex flex-col justify-center items-center"
+    >
       <h1 className="text-4xl md:text-6xl font-semibold mb-6 mt-2">
         Our Clients
       </h1>
