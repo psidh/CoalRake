@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import TopIntro from './components/TopIntro';
 import AboutSection from './components/WhatDo';
 import Title from './components/Title';
-import Example from './components/chart';
 import Partner from './components/Partner';
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
           <AboutSection />
           <TopIntro />
           <Partner />
-          <Example />
           <Footer />
         </div>
       </main>

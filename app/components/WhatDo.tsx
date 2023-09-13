@@ -26,7 +26,7 @@ const WhatDo: React.FC = () => {
           What Do We Do
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl text-justify">
-          At CRN Coal Raker Navigators, we specialize in revolutionizing coal
+          At CRN Coal Rake Navigators, we specialize in revolutionizing coal
           logistics. Our digital platform provides real-time updates on coal
           availability at railway sidings, ensuring that trains are dispatched
           to the nearest location with sufficient coal. By optimizing coal
@@ -43,7 +43,7 @@ const WhatDo: React.FC = () => {
           src="/map.png"
           alt="map"
           width={1000} // Adjust the desired width for smaller screens
-          height={400} // Adjust the desired height for smaller screens
+          height={600} // Adjust the desired height for smaller screens
           className="rounded overflow-hidden"
         />
       </div>
