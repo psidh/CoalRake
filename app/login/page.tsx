@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -7,8 +7,45 @@ import { auth } from '../config.js';
 import { useRouter } from 'next/navigation.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-
+import Image from 'next/image';
 const Login: React.FC = () => {
+  const [position, setPosition] = useState(0);
+
+    // Adjust the duration and distance as needed
+    const animationDuration = 7000; // 7 seconds
+    
+    const translateDistance = 100; // Translate from right to left
+  
+    useEffect(() => {
+      let animationInterval: NodeJS.Timeout | null = null;
+  
+      const startAnimation = () => {
+        animationInterval = setInterval(() => {
+          setPosition((prevPosition) =>
+            prevPosition + 1 > 100 ? 0 : prevPosition + 1
+          );
+        }, animationDuration / 150);
+      };
+  
+      const stopAnimation = () => {
+        if (animationInterval) {
+          clearInterval(animationInterval);
+          animationInterval = null;
+        }
+      };
+  
+      startAnimation();
+  
+      // Stop the animation after 7 seconds
+      setTimeout(() => {
+        stopAnimation();
+      }, 740); // 7 seconds
+  
+      return () => {
+        stopAnimation();
+      };
+    }, []);
+
   const [isLogin, setIsLogin] = useState(true);
 
   const toggleLogin = () => {
@@ -33,6 +70,25 @@ const Login: React.FC = () => {
             backgroundSize: 'cover',
           }}
         >
+          <div className="relative w-full h-[10vh]">
+            <div
+              className="absolute top-0 left-0 w-20 h-20  transition-transform transform translate-x-full"
+              style={{
+                transform: `translateX(${position * translateDistance}%)`,
+                transition: `transform ${animationDuration}ms linear`,
+              }}
+            >
+              {/* Your image content goes here */}
+              <Image
+                src="/animate.png"
+                alt="Translating Image"
+                width={1000}
+                height={1000}
+                className=" object-cover"
+              />
+            </div>
+          </div>
+
           <div className="w-full flex items-center justify-center md:mr-8">
             <div className="bg-white dark:bg-black text-black dark:text-white rounded-lg p-4 sm:p-8 shadow-md">
               <h2 className="text-2xl font-semibold mb-4">

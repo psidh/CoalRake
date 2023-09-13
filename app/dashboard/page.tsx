@@ -116,7 +116,7 @@ const Dashboard = () => {
   return (
     <div>
       <CustomNav />
-      <div className="min-h-screen bg-gray-100 p-4">
+      <div className="min-h-screen  p-4">
         <h1 className="text-2xl font-semibold mb-4">
           Coal Production Dashboard
         </h1>
