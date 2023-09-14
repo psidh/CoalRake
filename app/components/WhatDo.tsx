@@ -20,6 +20,7 @@ const WhatDo: React.FC = () => {
     <section
       data-aos="fade-in"
       className="p-4 md:p-10 m-4 sm:m-16 sm:flex sm:items-center sm:justify-between"
+      style={{ fontFamily: 'Ambit, sans-serif' }}
     >
       <div className="sm:w-full mr-4 md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-semibold mb-2 md:mb-4">
@@ -40,7 +41,7 @@ const WhatDo: React.FC = () => {
       </div>
       <div className="sm:w-1/2 flex justify-center items-center ml-4 sm:mt-0">
         <Image
-          src="/sidling.jpeg"
+          src="/sidling.png"
           alt="map"
           // Adjust the desired width for smaller screens
           width={1000}

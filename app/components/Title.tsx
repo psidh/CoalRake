@@ -3,7 +3,8 @@ import Image from "next/image";
 
 const Title: React.FC = () => {
   return (
-    <section className="p-4 m-4 flex flex-col items-center justify-center">
+    <section className="p-4 m-4 flex flex-col items-center justify-center" 
+    style={{ fontFamily: 'Ambit, sans-serif' }}>
       <Image
         src={"/headtitle.png"}
         alt='LOGO'

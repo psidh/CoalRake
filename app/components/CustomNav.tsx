@@ -27,7 +27,7 @@ const CustomNav: React.FC<NavBarProps> = () => {
   };
 
   return (
-    <div>
+    <div style={{ fontFamily: 'Ambit, sans-serif' }}>
       <div className="mx-8  lg:mx-20 flex justify-between font-semibold text-xl py-8 md:py-10">
         <div className="flex flex-row items-center justify-center font-semibold text-xl md:space-x-4">
           <a className="hover:scale-105 transition duration-300" href="/">

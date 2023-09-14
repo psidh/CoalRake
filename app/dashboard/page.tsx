@@ -106,7 +106,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div>
+    <div style={{ fontFamily: 'Ambit, sans-serif' }}>
       <CustomNav />
       <div className="min-h-screen  p-4">
         <h1 className="text-2xl font-semibold mb-4">

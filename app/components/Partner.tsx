@@ -20,6 +20,7 @@ export default function Partner() {
     <div
       data-aos="fade-in"
       className="flex flex-col justify-center items-center"
+      style={{ fontFamily: 'Ambit, sans-serif' }}
     >
       <h1 className="text-4xl md:text-6xl font-semibold mb-6 mt-2">
         Our Clients
@@ -60,7 +61,7 @@ export default function Partner() {
         <div className="flex flex-col justify-center items-center space-y-4 m-6">
           <Image
             // Replace with the actual path to your client image
-            src="/rail.jpeg"
+            src="/rail.png"
             alt="Client 2"
             width={230}
             height={230}
