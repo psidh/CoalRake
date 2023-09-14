@@ -11,7 +11,7 @@ const GetStartedPage = () => {
         {/* Hero Section */}
         <div className="bg-blue-400 text-white py-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center">
-        <div className="lg:w-1/2 text-center lg:text-left lg:pr-8">
+        <div className=" text-center lg:text-left lg:pr-8">
           <h1 className="text-4xl font-semibold mb-4">
             Get Started as a Coal Operator
           </h1>
@@ -21,12 +21,12 @@ const GetStartedPage = () => {
           <a
             href="/login"
             target="_blank" // Replace with the actual signup page URL
-            className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-3xl transition duration-300 ease-in-out inline-block text-lg"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition duration-300 ease-in-out inline-block text-lg"
           >
             Sign Up Now!
           </a>
         </div>
-        <div className="lg:w-1/2 mt-6 lg:mt-0">
+        <div className=" mt-6 lg:mt-0">
           {/* Next.js Image Component */}
           <div className="relative h-64 w-64 mx-auto lg:mx-0">
             <Image
@@ -34,7 +34,6 @@ const GetStartedPage = () => {
               alt="Coal Operator Image"
               layout="fill"
               objectFit="cover"
-              className="rounded-full"
             />
           </div>
         </div>
