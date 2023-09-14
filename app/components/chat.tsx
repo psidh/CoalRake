@@ -40,7 +40,7 @@ const Chat = () => {
 
 
   return (
-    <div className="fixed right-4 bottom-4">
+    <div className="fixed right-4 bottom-4" style={{ fontFamily: 'Ambit, sans-serif' }}>
       {isOpen ? (
         <div className="bg-green-50 p-4 rounded-xl shadow-lg">
           <button className="absolute top-2 right-2 text-gray-500" onClick={handleCloseChatbox}>

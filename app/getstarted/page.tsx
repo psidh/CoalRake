@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
 import Image from "next/image";
-import Chat from '../components/chat';
+import Chat from '../components/Chat';
 const GetStartedPage = () => {
   return (
     <div>

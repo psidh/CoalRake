@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Image from "next/image";
 import { useRouter } from 'next/navigation.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
 import { getAuth, signOut } from 'firebase/auth';
 import { auth } from '../config.js';
 

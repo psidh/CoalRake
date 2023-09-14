@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import CustomNav from '../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
-import Chat from '../components/chat';
+import Chat from '../components/Chat';
 // Define a type for your data
 interface CoalData {
   region: string;
@@ -19,46 +19,43 @@ const Dashboard = () => {
   const [districtFilter, setDistrictFilter] = useState('');
   const [ownerFilter, setOwnerFilter] = useState('');
   const [mineFilter, setMineFilter] = useState('');
-  const [selectedDistrictImage, setSelectedDistrictImage] = useState<
-    string | null
-  >(null);
 
   useEffect(() => {
     // Mock data for demonstration purposes
     const mockData: CoalData[] = [
       {
-        region: 'Region 1',
-        district: 'District A',
-        owner: 'Owner X',
-        mineName: 'Mine 1',
+        region: 'Andhra Pradesh',
+        district: 'Visakhapatnam',
+        owner: 'CSI',
+        mineName: '10C',
         coalProduction: 100,
       },
       {
-        region: 'Region 1',
-        district: 'District B',
-        owner: 'Owner Y',
-        mineName: 'Mine 2',
-        coalProduction: 200,
-      },
-      {
-        region: 'Region 1',
-        district: 'District C',
-        owner: 'Owner Z',
-        mineName: 'Mine 3',
+        region: 'Andhra Pradesh',
+        district: 'Vizianagaram',
+        owner: 'CSB',
+        mineName: '10B',
         coalProduction: 120,
       },
       {
-        region: 'Region3',
-        district: 'District D',
-        owner: 'Owner Z',
-        mineName: 'Mine 3',
-        coalProduction: 150,
+        region: 'Andhra Pradesh',
+        district: 'Visakhapatnam',
+        owner: 'CSI',
+        mineName: '10C',
+        coalProduction: 130,
+      },
+      {
+        region: 'Andhra Pradesh',
+        district: 'Srikakulam',
+        owner: 'CSI',
+        mineName: '10R',
+        coalProduction: 140,
       },
       {
         region: 'Assam',
         district: 'Dispur',
-        owner: 'Billionaire Premsai ',
-        mineName: 'PremSai Coaler',
+        owner: 'RK45',
+        mineName: 'CS34',
         coalProduction: 150,
       },
       // Add more data entries as needed
@@ -108,17 +105,6 @@ const Dashboard = () => {
       (!mineFilter || item.mineName === mineFilter)
   );
 
-  const handleDistrictFilterChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const selectedDistrict = e.target.value;
-    setDistrictFilter(selectedDistrict);
-
-    // Load the corresponding image based on the selected district
-    const imagePath = `/${selectedDistrict}.png`; // Adjust the path accordingly
-    setSelectedDistrictImage(imagePath);
-  };
-
   return (
     <div>
       <CustomNav />
@@ -161,8 +147,6 @@ const Dashboard = () => {
               )}
             </select>
           </div>
-
-          {/* Selected District Image */}
 
           <div>
             <select
@@ -219,7 +203,7 @@ const Dashboard = () => {
             </table>
           ) : (
             // Display a message when no matching rows are found
-            <div className="text-center text-2xl text-gray-500 mt-4">
+            <div className="text-center my-4 text-2xl text-gray-500 mt-4">
               No matching records found.
             </div>
           )}
