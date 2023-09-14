@@ -5,7 +5,7 @@ const Title: React.FC = () => {
   return (
     <section className="p-4 m-4 flex flex-col items-center justify-center">
       <Image 
-      src={"/headtitle.jpeg"}
+      src={"/headtitle.png"}
       alt='LOGO'
       width={1200}
       height={500}/>

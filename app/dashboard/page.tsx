@@ -1,14 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { useRouter } from 'next/navigation.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import { getAuth, signOut } from 'firebase/auth';
-import { auth } from '../config.js';
 import CustomNav from '../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
-
+import Chat from '../components/chat';
 // Define a type for your data
 interface CoalData {
   region: string;
@@ -19,14 +13,15 @@ interface CoalData {
 }
 
 const Dashboard = () => {
-  const navigator = useRouter();
-
   // Define state variables for your data and filters
   const [data, setData] = useState<CoalData[]>([]);
   const [regionFilter, setRegionFilter] = useState('');
   const [districtFilter, setDistrictFilter] = useState('');
   const [ownerFilter, setOwnerFilter] = useState('');
   const [mineFilter, setMineFilter] = useState('');
+  const [selectedDistrictImage, setSelectedDistrictImage] = useState<
+    string | null
+  >(null);
 
   useEffect(() => {
     // Mock data for demonstration purposes
@@ -113,6 +108,17 @@ const Dashboard = () => {
       (!mineFilter || item.mineName === mineFilter)
   );
 
+  const handleDistrictFilterChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedDistrict = e.target.value;
+    setDistrictFilter(selectedDistrict);
+
+    // Load the corresponding image based on the selected district
+    const imagePath = `/${selectedDistrict}.png`; // Adjust the path accordingly
+    setSelectedDistrictImage(imagePath);
+  };
+
   return (
     <div>
       <CustomNav />
@@ -156,6 +162,8 @@ const Dashboard = () => {
             </select>
           </div>
 
+          {/* Selected District Image */}
+
           <div>
             <select
               value={ownerFilter}
@@ -186,7 +194,7 @@ const Dashboard = () => {
                   <th className="p-2">District</th>
                   <th className="p-2">Owner</th>
                   <th className="p-2">Mine Name</th>
-                  <th className="p-2">Coal Production</th>
+                  <th className="p-2">Coal Production (Metric Tonnes)</th>
                 </tr>
               </thead>
               <tbody>
@@ -217,6 +225,7 @@ const Dashboard = () => {
           )}
         </div>
       </div>
+      <Chat />
       <Footer />
     </div>
   );

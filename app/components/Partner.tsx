@@ -27,7 +27,7 @@ export default function Partner() {
       <div className="md:grid md:grid-cols-2 flex flex-col justify-between items-center ">
         <div className="flex flex-col justify-center items-center space-y-3 m-6">
           <Image
-            src="/miniscoal.webp" // Replace with the actual path to your client image
+            src="/miniscoal.png" // Replace with the actual path to your client image
             width={200}
             height={200}
             alt="Client 1"
