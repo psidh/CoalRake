@@ -3,33 +3,42 @@ const certificatesData: {
   description: string;
 }[] = [
   {
-    title: "Database Management System",
-    description: "React | JS | HTML CSS ",
+    title: "User Registration",
+    description: "Authentication through Firebase",
   },
   {
-    title: "Providing Shortest Path",
-    description: "Python - OOPs",
+    title: "Coal Rake Tracking",
+    description: "Live tracking of the sidlings through maps",
   },
   {
-    title: "Authentication",
-    description: "Full Python Course",
+    title: "Route Planning Optimisation",
+    description: "Implementing algorithm for the shortset route",
 
   },
   {
     title: "Reduction of Demurrage Cost",
-    description: "Full Python Course",
+    description: "By navigation to the nearest storage unit",
 
   },
   {
     title: "Sidling information",
-    description: "Full Python Course",
+    description: "Data base manangement along the routes with capacity, availablility and occupancy",
 
   },
   {
     title: "Geo-Fencing and Location based service",
-    description: "Full Python Course",
+    description: "Setting up geo fences to alert users when reaching important landmarks",
 
   },
+  {
+    title: "Offline Mode access",
+    description : "View as PDF option for the offline access of the webpage"
+  },
+  {
+    title: "Weather and Traffic updates",
+    description : "Pop ups and notifications for the user on accounts of weather and route traffics"
+  }
+  
   // Add more certificate objects
 ];
 

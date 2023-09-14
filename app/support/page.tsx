@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Support: React.FC = () => {
   const [issue, setIssue] = useState('');
@@ -10,12 +12,11 @@ const Support: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Here, you can handle the submission of the issue, email, images, and issue list to your backend or support system
-    // For this example, we'll just log the values to the console
-    console.log('Submitted Issue:', issue);
-    console.log('Submitted Email:', email);
-    console.log('Submitted Images:', selectedImages);
-    console.log('Submitted Issue List:', issueList);
+    // Display notifications for submitted data
+    toast.info(`Submitted Issue: ${issue}`);
+    toast.info(`Submitted Email: ${email}`);
+    toast.info(`Submitted Images: ${selectedImages.join(', ')}`);
+    toast.info(`Submitted Issue List: ${issueList.join(', ')}`);
 
     // Clear the form fields
     setIssue('');
@@ -126,7 +127,12 @@ const Support: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+
+    <div className="max-w-lg mx-auto p-4">
+          {/* ... Your component content ... */}
+          <ToastContainer position="top-center" autoClose={6000} hideProgressBar />
+        </div>
+        </div>
   );
 };
 
