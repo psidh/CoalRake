@@ -67,6 +67,9 @@ const NavBar: React.FC<NavBarProps> = () => {
           <a className="  hover:text-blue-600" href="/login">
             Log In
           </a>
+          <a className="  hover:text-blue-600" href="/support">
+            Support
+          </a>
         </div>
         <svg
           onClick={toggleNav} // Add onClick event to toggle navigation
