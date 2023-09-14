@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer: React.FC = () => {
   return (
-    <main id="footer">
+    <main id="footer" >
       <div className="bg-gray-100 md:pt-4 md:pb-8 px-8 lg:px-36 flex lg:flex-row flex-col gap-6 lg:gap-0 justify-between items-center">
         <div className="flex gap-x-12 items-center justify-center">
           <a href="/">
