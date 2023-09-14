@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { BsFillTelephoneFill, BsTwitter, BsGithub } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
 import { BiLogoGmail } from 'react-icons/bi';
-import Image from 'next/image';
+import Image from "next/image";
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Ambit';
@@ -22,7 +22,10 @@ const Footer: React.FC = () => {
             alt="Picture of the author"
             width={100}
             height={100}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <a
             href="https://twitter.com/coalministry"
             className="hover:scale-105 transition duration-300"
