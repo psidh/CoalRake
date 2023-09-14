@@ -45,7 +45,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             }} />
 
           <Image
-            src="/g20.webp"
+            src="/g20.png"
             alt="India"
             // Set the desired width
             width={100}
