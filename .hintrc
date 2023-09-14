@@ -29,6 +29,7 @@
       {
         "image-alt": "off"
       }
-    ]
+    ],
+    "typescript-config/is-valid": "off"
   }
 }

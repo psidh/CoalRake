@@ -1,22 +1,34 @@
 const certificatesData: {
   title: string;
   description: string;
-  image: string;
 }[] = [
   {
-    title: "Full Stack Development",
+    title: "Database Management System",
     description: "React | JS | HTML CSS ",
-    image: "certificates/Web.png",
   },
   {
-    title: "Python",
+    title: "Providing Shortest Path",
     description: "Python - OOPs",
-    image: "certificates/hackerrank.png",
   },
   {
-    title: "Python",
+    title: "Authentication",
     description: "Full Python Course",
-    image: "certificates/Python.png",
+
+  },
+  {
+    title: "Reduction of Demurrage Cost",
+    description: "Full Python Course",
+
+  },
+  {
+    title: "Sidling information",
+    description: "Full Python Course",
+
+  },
+  {
+    title: "Geo-Fencing and Location based service",
+    description: "Full Python Course",
+
   },
   // Add more certificate objects
 ];

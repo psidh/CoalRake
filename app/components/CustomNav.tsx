@@ -67,11 +67,14 @@ const CustomNav: React.FC<NavBarProps> = () => {
           <a className="  hover:text-blue-600" href="/about">
             About
           </a>
-          <a className="  hover:text-blue-600" href="/#getstarted">
+          <a className="  hover:text-blue-600" href="/getstarted">
             Get Started
           </a>
           <a className="  hover:text-blue-600" href="/#blog">
             Sign Out
+          </a>
+          <a className="  hover:text-blue-600" href="/support">
+            Support
           </a>
         </div>
         <svg

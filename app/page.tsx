@@ -8,6 +8,7 @@ import AboutSection from './components/WhatDo';
 import Title from './components/Title';
 import Partner from './components/Partner';
 import Chat from './components/Chat';
+import Features from "./components/Features";
 export default function Home() {
   return (
     <div>
@@ -16,8 +17,9 @@ export default function Home() {
           <NavBar />
           <Title />
           <AboutSection />
-          <TopIntro />
           <Partner />
+          <Features/>
+          <TopIntro />
           <Chat />
           <Footer />
         </div>
