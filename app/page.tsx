@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 'use client';
-import Image from 'next/image';
+import Image from "next/image";
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import TopIntro from './components/TopIntro';

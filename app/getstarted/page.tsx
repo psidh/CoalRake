@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
-import Image from 'next/image';
+import Image from "next/image";
 import Chat from '../components/chat';
 const GetStartedPage = () => {
   return (
@@ -31,11 +31,14 @@ const GetStartedPage = () => {
           {/* Next.js Image Component */}
           <div className="relative h-64 w-64 mx-auto lg:mx-0">
             <Image
-              src="/worker.svg" // Replace with your image path
+              // Replace with your image path
+              src="/worker.svg"
               alt="Coal Operator Image"
-              layout="fill"
-              objectFit="cover"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </div>
         </div>
       </div>

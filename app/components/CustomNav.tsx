@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Image from 'next/image';
+import Image from "next/image";
 import { useRouter } from 'next/navigation.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
@@ -42,18 +42,28 @@ const CustomNav: React.FC<NavBarProps> = () => {
           <Image
             src="/azadi.png"
             alt="India"
-            width={100} // Set the desired width
-            height={60} // Set the desired height
+            // Set the desired width
+            width={100}
+            // Set the desired height
+            height={60}
             className="rounded overflow-hidden"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
 
           <Image
             src="/g20.png"
             alt="India"
-            width={100} // Set the desired width
-            height={60} // Set the desired height
+            // Set the desired width
+            width={100}
+            // Set the desired height
+            height={60}
             className="rounded overflow-hidden"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div className="gap-14 hidden lg:flex items-center">
           <a className="  hover:text-blue-600" href="/about">
