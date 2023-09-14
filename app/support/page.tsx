@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import Chat from '../components/Chat';
 const Support: React.FC = () => {
   const [issue, setIssue] = useState('');
   const [email, setEmail] = useState('');
@@ -42,7 +44,10 @@ const Support: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4">
+    <>
+    <NavBar />
+    
+    <div className="max-w-2xl mx-auto p-4">
       <h2 className="text-2xl font-semibold mb-4">Get Help Center</h2>
       <p className="text-gray-600 mb-4">
         If you have any issues or questions regarding our website, please fill
@@ -128,11 +133,13 @@ const Support: React.FC = () => {
         </div>
       )}
 
-    <div className="max-w-lg mx-auto p-4">
-          {/* ... Your component content ... */}
-          <ToastContainer position="top-center" autoClose={6000} hideProgressBar />
-        </div>
-        </div>
+      <div className="max-w-2xl mx-auto p-4">
+        <ToastContainer position="top-center" autoClose={6000} hideProgressBar />
+      </div>
+    </div>
+    <Chat />
+    <Footer />
+    </>
   );
 };
 
