@@ -21,7 +21,7 @@ const WhatDo: React.FC = () => {
       data-aos="fade-in"
       className="p-4 md:p-10 m-4 sm:m-16 sm:flex sm:items-center sm:justify-between"
     >
-      <div className="sm:w-full md:w-1/2">
+      <div className="sm:w-full mr-4 md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-semibold mb-2 md:mb-4">
           What Do We Do
         </h2>
@@ -38,9 +38,9 @@ const WhatDo: React.FC = () => {
           drive positive change in the transportation of this critical resource.
         </p>
       </div>
-      <div className="sm:w-1/2 flex justify-center items-center my-4 sm:mt-0">
+      <div className="sm:w-1/2 flex justify-center items-center ml-4 sm:mt-0">
         <Image
-          src="/map.png"
+          src="/sidling.jpeg"
           alt="map"
           width={1000} // Adjust the desired width for smaller screens
           height={600} // Adjust the desired height for smaller screens

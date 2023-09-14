@@ -7,6 +7,7 @@ import TopIntro from './components/TopIntro';
 import AboutSection from './components/WhatDo';
 import Title from './components/Title';
 import Partner from './components/Partner';
+import Chat from './components/chat';
 export default function Home() {
   return (
     <div>
@@ -17,6 +18,7 @@ export default function Home() {
           <AboutSection />
           <TopIntro />
           <Partner />
+          <Chat />
           <Footer />
         </div>
       </main>

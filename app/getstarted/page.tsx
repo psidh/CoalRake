@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
 import Image from 'next/image';
+import Chat from '../components/chat';
 const GetStartedPage = () => {
   return (
     <div>
@@ -135,6 +136,7 @@ const GetStartedPage = () => {
         {/* Additional Sections */}
         {/* Add more sections with content, headings, and images as needed */}
       </div>
+      <Chat />
       <Footer />
     </div>
   );
