@@ -15,10 +15,10 @@ const Support: React.FC = () => {
     e.preventDefault();
 
     // Display notifications for submitted data
-    toast.info(`Submitted Issue: ${issue}`);
-    toast.info(`Submitted Email: ${email}`);
-    toast.info(`Submitted Images: ${selectedImages.join(', ')}`);
-    toast.info(`Submitted Issue List: ${issueList.join(', ')}`);
+    toast.info(`Main Issue: ${issue}`);
+    toast.info(`Email: ${email}`);
+    toast.info(` ${selectedImages.join(', ')} uploaded`);
+    toast.info(`Issue List ${issueList.join(', ')}`);
 
     // Clear the form fields
     setIssue('');
@@ -48,8 +48,8 @@ const Support: React.FC = () => {
     <NavBar />
     
     <div className="max-w-2xl mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Get Help Center</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-2xl md:text-4xl font-semibold mb-4">Get Help Center</h2>
+      <p className="text-lg md:text-xl text-gray-600 mb-4">
         If you have any issues or questions regarding our website, please fill
         out the form below, and we'll get back to you as soon as possible.
       </p>
