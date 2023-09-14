@@ -2,8 +2,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { getAuth, signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import { auth } from '../config.js';
 import { useRouter } from 'next/navigation.js';
 
@@ -14,18 +13,41 @@ const About: React.FC = () => {
     <div>
       <NavBar />
       <div className="p-4 container font-semibold mb-4 mx-auto pt-4 pb-8 px-6 md:px-16 md:py-10 text-justify">
-        <h1 className="text-3xl font-semibold mb-4 ">
+        <h1 className="text-4xl font-bold mb-8">
           About CEM Coal Express Navigators
         </h1>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Problem Statement</h2>
-          <p className="text-gray-600">
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-2">Problem Statement</h2>
+          <p className="text-gray-700">
             The coal transportation industry faces challenges with coal
             availability at railway sidings, resulting in demurrage charges due
             to waiting times for trains. CEM Coal Express Navigators aims to
             address this problem.
           </p>
         </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-white dark:bg-black rounded-lg p-4 shadow-md">
+            <img
+              src="/loginage.png" // Replace with your image source
+              alt="problem statement picture here"
+              className="rounded-lg mb-4"
+            />
+            <p className="text-gray-700">
+              This is the first image card with some information about it.
+            </p>
+          </div>
+          <div className="bg-white dark:bg-black rounded-lg p-4 shadow-md">
+            <img
+              src="/image2.jpg" // Replace with your image source
+              alt="Image 2"
+              className="w-full h-auto rounded-lg mb-4"
+            />
+            <p className="text-gray-700">
+              This is the second image card with some information about it.
+            </p>
+          </div>
+        </div>
+
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Who We Are</h2>
           <p className="text-gray-600">
@@ -77,23 +99,6 @@ const About: React.FC = () => {
             real-time information to railway employees.
           </p>
         </section>
-      </div>
-      <div className="flex flex-col justify-center items-center">
-        <button
-          className="bg-blue-600 hover:bg-blue-700 text-white 
-    font-bold py-4 px-16 rounded-lg flex flex-col justi items-center"
-          onClick={() => {
-            signOut(auth)
-              .then(() => {
-                navigator.replace('/');
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }}
-        >
-          Sign Out
-        </button>
       </div>
       <Footer />
     </div>
