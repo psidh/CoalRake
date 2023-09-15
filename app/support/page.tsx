@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Chat from '../components/Chat';
+import Image from 'next/image';
 const Support: React.FC = () => {
   const [issue, setIssue] = useState('');
   const [email, setEmail] = useState('');
@@ -48,15 +49,46 @@ const Support: React.FC = () => {
   return (
     <>
       <NavBar />
-
-      <div className="max-w-2xl mx-auto p-4">
-        <h2 className="text-2xl md:text-4xl font-semibold mb-4">
-          Get Help Center
-        </h2>
-        <p className="text-lg md:text-xl text-gray-600 mb-4">
-          If you have any issues or questions regarding our website, please fill
+      <div className="min-h-fit">
+        {/* Hero Section */}
+        <div className="bg-green-500 text-white py-12">
+          <div className="container mx-auto flex flex-col lg:flex-row items-center">
+            <div className=" text-center lg:text-left lg:pr-8">
+              <h1 className="text-4xl font-semibold mb-4">
+              Support
+              </h1>
+              <p className="text-lg mb-6">
+              If you have any issues or questions regarding our website, please fill
           out the form below, and we'll get back to you as soon as possible.
-        </p>
+              </p>
+              <a
+                href="/login"
+                target="_blank" // Replace with the actual signup page URL
+                className="px-6 py-3 bg-black hover:bg-green-700 text-white rounded-full transition duration-300 ease-in-out inline-block text-lg"
+              >
+                Sign Up Now!
+              </a>
+            </div>
+            <div className=" mt-6 lg:mt-0">
+              {/* Next.js Image Component */}
+              <div className="relative h-64 w-64 mx-auto lg:mx-0">
+                <Image
+                  // Replace with your image path
+                  src="/support.svg"
+                  alt="Coal Operator Image"
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-2/3 justify-center mx-auto flex flex-col min-h-fit p-4">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label

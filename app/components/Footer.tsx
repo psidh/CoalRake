@@ -32,38 +32,38 @@ const Footer: React.FC = () => {
           <a
             href="https://twitter.com/coalministry"
             className="hover:scale-105 transition duration-300"
-            style={{ fontSize: '36px', lineHeight: '36px' }}
+            style={{ fontSize: '24px', lineHeight: '24px' }}
           >
             <BsTwitter />
           </a>
           <a
             href="https://github.com/psidh/CoalRaker"
             className="hover:scale-105 transition duration-300"
-            style={{ fontSize: '36px', lineHeight: '36px' }} // Adjust the font size and line height as needed
+            style={{ fontSize: '24px', lineHeight: '24px' }} // Adjust the font size and line height as needed
           >
             <BsGithub />
           </a>
         </div>
         <div className="flex gap-4">
           <div className="grid grid-cols-1 gap-4 items-center justify-center">
-            <div className="flex flex-row hover:scale-150 transition duration-300 items-center justify-start">
+            <div className="flex flex-row hover:scale-105 transition duration-300 items-center justify-start">
               <BsFillTelephoneFill
                 className="m-2"
-                style={{ fontSize: '30px', lineHeight: '30px' }}
+                style={{ fontSize: '24px', lineHeight: '24px' }}
               />
               1800 1900 1800
             </div>
-            <div className="flex flex-row items-center hover:scale-150 transition duration-300 justify-start">
+            <div className="flex flex-row items-center hover:scale-105 transition duration-300 justify-start">
               <BiLogoGmail
-                className=" m-2"
-                style={{ fontSize: '30px', lineHeight: '30px' }}
+                className="m-2"
+                style={{ fontSize: '24px', lineHeight: '24px' }}
               />
               Contact@gmail.com
             </div>
-            <div className="flex flex-row hover:scale-150 transition duration-300 items-center justify-start">
+            <div className="flex flex-row hover:scale-105 transition duration-300 items-center justify-start">
               <AiFillHome
-                className=" m-2"
-                style={{ fontSize: '30px', lineHeight: '30px' }}
+                className="m-2"
+                style={{ fontSize: '24px', lineHeight: '24px' }}
               />
               Home
             </div>
