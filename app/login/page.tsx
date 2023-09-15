@@ -74,7 +74,7 @@ const Login: React.FC = () => {
             backgroundSize: 'cover',
           }}
         >
-          <div className="w-full h-10 relative">
+          <div className="w-full h-20 mb-4 relative">
             <div
               className="absolute top-0 left-0 w-20 h-20 transition-transform transform translate-x-full"
               style={{

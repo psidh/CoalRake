@@ -9,6 +9,7 @@ import Title from './components/Title';
 import Partner from './components/Partner';
 import Chat from './components/Chat';
 import Features from "./components/Features";
+import EditButton from "./components/Edit";
 export default function Home() {
   return (
     <div>
