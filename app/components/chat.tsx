@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useState, useEffect } from 'react';
 
 const Chat = () => {
@@ -7,7 +7,6 @@ const Chat = () => {
   const [chatHistory, setChatHistory] = useState<string[]>([]);
 
   useEffect(() => {
-    
     const storedChatHistory = localStorage.getItem('chatHistory');
     if (storedChatHistory) {
       setChatHistory(JSON.parse(storedChatHistory));
@@ -38,13 +37,23 @@ const Chat = () => {
     localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
   }
 
-
   return (
-    <div className="fixed right-4 bottom-4" style={{ fontFamily: 'Ambit, sans-serif' }}>
+    <div
+      className="fixed right-4 bottom-4"
+      style={{ fontFamily: 'Ambit, sans-serif' }}
+    >
       {isOpen ? (
         <div className="bg-green-50 p-4 rounded-xl shadow-lg">
-          <button className="absolute top-2 right-2 text-gray-500" onClick={handleCloseChatbox}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <button
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={handleCloseChatbox}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
               <path d="M6.293 6.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z" />
             </svg>
           </button>
