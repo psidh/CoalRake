@@ -47,7 +47,7 @@ const WhatDo: React.FC = () => {
           width={1000}
           // Adjust the desired height for smaller screens
           height={600}
-          className="rounded overflow-hidden"
+          className="rounded-3xl overflow-hidden"
           style={{
             maxWidth: '100%',
             height: 'auto',

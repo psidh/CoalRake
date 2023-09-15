@@ -82,7 +82,7 @@ const Chat = () => {
         </div>
       ) : (
         <button
-          className="bg-blue-100 text-black hover:text-white hover:bg-blue-600 py-3 px-12 rounded-lg"
+          className="bg-blue-100 text-black hover:text-white hover:bg-blue-600 transition duration-300 py-3 px-16 rounded-lg"
           onClick={toggleChatbox}
         >
           Chat Bot
