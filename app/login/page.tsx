@@ -140,7 +140,7 @@ const Login: React.FC = () => {
                     createUserWithEmailAndPassword(auth, email, password)
                       .then((userCredential) => {
                         const user = userCredential.user;
-                        navigator.replace('/data');
+                        navigator.replace('/dashboard');
                       })
                       .catch((error) => {
                         const errorCode = error.code;

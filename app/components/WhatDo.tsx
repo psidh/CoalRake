@@ -41,7 +41,7 @@ const WhatDo: React.FC = () => {
       </div>
       <div className="sm:w-1/2 flex justify-center items-center ml-4 sm:mt-0">
         <Image
-          src="/sidling.png"
+          src="/siding.png"
           alt="map"
           // Adjust the desired width for smaller screens
           width={1000}

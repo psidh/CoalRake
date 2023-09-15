@@ -41,7 +41,7 @@ const Features: React.FC = () => {
 
   return (
     <div data-aos="fade-in" style={{ fontFamily: 'Ambit, sans-serif' }}>
-      <div className="py-6 bg-gray-200 md:py-12 mt-4 ">
+      <div className="py-6 bg-blue-200 md:py-12 mt-4 ">
         <div className="container bg-gray-4w00 mx-auto text-center">
           <h2 className="md:text-4xl text-3xl font-semibold my-4 mb-8">
             Features
@@ -49,7 +49,7 @@ const Features: React.FC = () => {
           <Slider {...settings}>
             {certificatesData.map((certificate, index) => (
               <div key={index} className="px-4">
-                <div className="bg-gray-100 rounded-lg shadow-lg p-6 mb-4">
+                <div className="bg-blue-50 rounded-lg shadow-lg p-6 mb-4">
                   <div>
                     <h3 className="text-xl font-semibold mb-2">
                       {certificate.title}
