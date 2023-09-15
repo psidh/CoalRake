@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,10 +35,11 @@ export default function Partner() {
             alt="Client 1"
             className="rounded"
             style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "cover"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+            }}
+          />
           <a
             href="https://coal.nic.in/" // Replace with the actual client 1 website URL
             target="_blank"
@@ -67,10 +68,11 @@ export default function Partner() {
             height={230}
             className="rounded"
             style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "cover"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+            }}
+          />
           <div className="flex flex-col justify-center items-center">
             <a
               href="https://indianrailways.gov.in/railwayboard/" // Replace with the actual client 2 website URL

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Image from "next/image";
+import Image from 'next/image';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Ambit';
@@ -40,9 +40,10 @@ const NavBar: React.FC<NavBarProps> = () => {
             height={60}
             className="rounded overflow-hidden"
             style={{
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
 
           <Image
             src="/g20.png"
@@ -53,9 +54,10 @@ const NavBar: React.FC<NavBarProps> = () => {
             height={60}
             className="rounded overflow-hidden"
             style={{
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
         </div>
         <div className="gap-14 hidden lg:flex items-center">
           <a className="  hover:text-blue-600" href="/about">

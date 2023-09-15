@@ -14,7 +14,7 @@ const ToggleFormModal = () => {
   const options1 = ['Option A', 'Option B', 'Option C'];
   const options2 = ['Option 1', 'Option 2', 'Option 3'];
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     // Display a message to the user
@@ -29,100 +29,99 @@ const ToggleFormModal = () => {
 
   return (
     <div>
-  {/* Toggle button to show/hide the modal */}
-  <button
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    onClick={() => setShowModal(!showModal)}
-  >
-    Toggle Modal
-  </button>
+      {/* Toggle button to show/hide the modal */}
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => setShowModal(!showModal)}
+      >
+        Toggle Modal
+      </button>
 
-  {/* Modal */}
-  {showModal && (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="bg-white p-4 w-full md:w-1/2 mx-2 rounded-lg shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">Form Modal</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="option1" className="block font-semibold mb-2">
-              Dropdown 1
-            </label>
-            <select
-              id="option1"
-              className="w-full p-2 border rounded"
-              value={selectedOption1}
-              onChange={(e) => setSelectedOption1(e.target.value)}
-            >
-              {/* Populate options dynamically */}
-              {options1.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-4 w-full md:w-1/2 mx-2 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold mb-4">Form Modal</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label htmlFor="option1" className="block font-semibold mb-2">
+                  Dropdown 1
+                </label>
+                <select
+                  id="option1"
+                  className="w-full p-2 border rounded"
+                  value={selectedOption1}
+                  onChange={(e) => setSelectedOption1(e.target.value)}
+                >
+                  {/* Populate options dynamically */}
+                  {options1.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="option2" className="block font-semibold mb-2">
+                  Dropdown 2
+                </label>
+                <select
+                  id="option2"
+                  className="w-full p-2 border rounded"
+                  value={selectedOption2}
+                  onChange={(e) => setSelectedOption2(e.target.value)}
+                >
+                  {/* Populate options dynamically */}
+                  {options2.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="numericalInput"
+                  className="block font-semibold mb-2"
+                >
+                  Numerical Input
+                </label>
+                <input
+                  type="number"
+                  id="numericalInput"
+                  className="w-full p-2 border rounded"
+                  value={numericalInput}
+                  onChange={(e) => setNumericalInput(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
-          <div className="mb-4">
-            <label htmlFor="option2" className="block font-semibold mb-2">
-              Dropdown 2
-            </label>
-            <select
-              id="option2"
-              className="w-full p-2 border rounded"
-              value={selectedOption2}
-              onChange={(e) => setSelectedOption2(e.target.value)}
-            >
-              {/* Populate options dynamically */}
-              {options2.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="numericalInput"
-              className="block font-semibold mb-2"
-            >
-              Numerical Input
-            </label>
-            <input
-              type="number"
-              id="numericalInput"
-              className="w-full p-2 border rounded"
-              value={numericalInput}
-              onChange={(e) => setNumericalInput(e.target.value)}
-            />
-          </div>
-          <div className="mb-4">
+        </div>
+      )}
+
+      {/* Pop-up message */}
+      {message && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-4 w-full md:w-1/2 mx-2 rounded-lg shadow-lg">
+            <p className="text-lg font-semibold mb-4">{message}</p>
             <button
-              type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => setMessage('')}
             >
-              Submit
+              Close
             </button>
           </div>
-        </form>
-      </div>
+        </div>
+      )}
     </div>
-  )}
-
-  {/* Pop-up message */}
-  {message && (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="bg-white p-4 w-full md:w-1/2 mx-2 rounded-lg shadow-lg">
-        <p className="text-lg font-semibold mb-4">{message}</p>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={() => setMessage('')}
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  )}
-</div>
-
   );
 };
 

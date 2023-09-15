@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Image from "next/image";
+import Image from 'next/image';
 import { useRouter } from 'next/navigation.js';
 import { getAuth, signOut } from 'firebase/auth';
 import { auth } from '../config.js';
@@ -46,9 +46,10 @@ const CustomNav: React.FC<NavBarProps> = () => {
             height={60}
             className="rounded overflow-hidden"
             style={{
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
 
           <Image
             src="/g20.png"
@@ -59,9 +60,10 @@ const CustomNav: React.FC<NavBarProps> = () => {
             height={60}
             className="rounded overflow-hidden"
             style={{
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
         </div>
         <div className="gap-14 hidden lg:flex items-center">
           <a className="  hover:text-blue-600" href="/about">

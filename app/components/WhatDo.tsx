@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Image from "next/image";
+import Image from 'next/image';
 
 const WhatDo: React.FC = () => {
   useEffect(() => {
@@ -49,9 +49,10 @@ const WhatDo: React.FC = () => {
           height={600}
           className="rounded overflow-hidden"
           style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
+            maxWidth: '100%',
+            height: 'auto',
+          }}
+        />
       </div>
     </section>
   );
