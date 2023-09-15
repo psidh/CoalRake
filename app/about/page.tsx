@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import { createGlobalStyle } from 'styled-components';
 import Features from '../components/Features';
 import Chat from '../components/Chat';
-
+import ProblemSolutionTable from '../components/PS';
+import DemurrageCalculator from '../components/BeerCharges';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Ambit';
@@ -53,6 +54,8 @@ const About: React.FC = () => {
             transportation industry.
           </p>
         </section>
+        <ProblemSolutionTable />
+        <DemurrageCalculator />
         <section className="my-4">
           <h2 className="text-2xl md:text-4xl text-gray-700  font-semibold mt-8 mb-4">
             How We Solve the Problem

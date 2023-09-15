@@ -33,7 +33,7 @@ export default function Partner() {
             width={200}
             height={200}
             alt="Client 1"
-            className="rounded"
+            className="rounded-2xl"
             style={{
               maxWidth: '100%',
               height: 'auto',
