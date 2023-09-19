@@ -36,11 +36,13 @@ const TopIntro: React.FC = () => {
           <img src="/background.png" className="w-full h-1/2 rounded-md" />
           <div className="bg-black z-10 absolute w-full h-full top-0 rounded-r-md bg-opacity-0 hover:bg-opacity-30">
             <div className="w-full h-full flex top-0 absolute items-center justify-center opacity-0 hover:opacity-100">
-              <button className="bg-blue-700 hover:bg-black text-white font-bold py-2 px-6 rounded-full md:py-4 md:px-12 sm:py-1 sm:px-4 transition duration-200">
-                <span className="font-extrabold md:text-4xl text-lg ">
-                  Get Started
-                </span>
-              </button>
+              <a href="/about" target="_blank">
+                <button className="bg-blue-700 hover:bg-black text-white font-bold py-2 px-6 rounded-full md:py-4 md:px-12 sm:py-1 sm:px-4 transition duration-200">
+                  <span className="font-extrabold md:text-4xl text-lg ">
+                    Get Started
+                  </span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
