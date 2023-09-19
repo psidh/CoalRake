@@ -22,7 +22,6 @@ export default function Home() {
           <Features />
           <TopIntro />
           <Chat />
-          <EditButton />
           <Footer />
         </div>
       </main>

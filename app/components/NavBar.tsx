@@ -100,7 +100,7 @@ const NavBar: React.FC<NavBarProps> = () => {
           <a className="hover:text-blue-600 m-8" href="/getstarted">
             Get Started
           </a>
-          <a className="  hover:text-blue-600" href="/support">
+          <a className="hover:text-blue-600 m-8" href="/support">
             Support
           </a>
           <a className="m-8   hover:text-blue-600" href="/login">
