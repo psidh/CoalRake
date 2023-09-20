@@ -1,9 +1,7 @@
 'use client';
 import { auth } from '../config.js';
 import { useRouter } from 'next/navigation.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
