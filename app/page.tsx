@@ -12,7 +12,6 @@ import Features from './components/Features';
 import EditButton from './components/Edit';
 export default function Home() {
   return (
-    <div>
       <main>
         <div className="min-h-fit" style={{ fontFamily: 'Ambit, sans-serif' }}>
           <NavBar />
@@ -25,6 +24,5 @@ export default function Home() {
           <Footer />
         </div>
       </main>
-    </div>
   );
 }
