@@ -1,8 +1,6 @@
 
 # Smart India Hackathon 2023 Official Submission
 
-## ** CEM Coal Express Navigators **
-
 Team Name:
 - Prem Sai Verukuri
 - Sanjeev Varma
