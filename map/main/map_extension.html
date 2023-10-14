@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet Map with Distance Calculation</title>
+
+    <!-- Include Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+
+    <!-- Define CSS for the map container -->
+    <style>
+      /* Set the map container to a specific height */
+      #map {
+        height: 700px;
+      }
+      .distance-label {
+        /*background-color: white; */
+        padding: 4px;
+        border: 1px solid #ccc;
+        border-radius: bold;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create a div for the map with an id of "map" -->
+    <div id="map"></div>
+
+    <!-- Create input fields for the first marker's latitude and longitude -->
+    <div>
+      <label for="latitude1">Latitude (Marker 1):</label>
+      <input type="text" id="latitude1" placeholder="Enter latitude" />
+    </div>
+    <div>
+      <label for="longitude1">Longitude (Marker 1):</label>
+      <input type="text" id="longitude1" placeholder="Enter longitude" />
+    </div>
+
+    <!-- Create input fields for the second marker's latitude and longitude -->
+    <div>
+      <label for="latitude2">Latitude (Marker 2):</label>
+      <input type="text" id="latitude2" placeholder="Enter latitude" />
+    </div>
+    <div>
+      <label for="longitude2">Longitude (Marker 2):</label>
+      <input type="text" id="longitude2" placeholder="Enter longitude" />
+    </div>
+
+    <!-- Button to calculate distance -->
+    <button id="calculateDistance">Calculate Distance</button>
+
+    <!-- Display the calculated distance with the correct ID -->
+    <div id="distance">Distance: N/A</div>
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- JavaScript for the map and distance calculation -->
+    <script>
+      // Function to calculate the distance using Haversine formula
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371; // Radius of the Earth in kilometers
+
+        // Convert latitude and longitude from degrees to radians
+        const lat1Rad = (lat1 * Math.PI) / 180;
+        const lon1Rad = (lon1 * Math.PI) / 180;
+        const lat2Rad = (lat2 * Math.PI) / 180;
+        const lon2Rad = (lon2 * Math.PI) / 180;
+
+        // Haversine formula
+        const dLat = lat2Rad - lat1Rad;
+        const dLon = lon2Rad - lon1Rad;
+
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(lat1Rad) *
+            Math.cos(lat2Rad) *
+            Math.sin(dLon / 2) *
+            Math.sin(dLon / 2);
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        // Calculate the distance
+        const distance = R * c;
+
+        return distance; // Distance in kilometers
+      }
+
+      // Create a map instance and set its view to a specific location and zoom level
+      var map = L.map('map').setView([17.8868, 83.3185], 13); // Adjusted view for better visibility
+
+      // Add an OpenStreetMap tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Initialize markers
+      var marker1;
+      var marker2;
+      var distanceMarker;
+
+      // Function to update markers and calculate distance
+      function updateMarkersAndCalculateDistance() {
+        const latitude1 = parseFloat(
+          document.getElementById('latitude1').value
+        );
+        const longitude1 = parseFloat(
+          document.getElementById('longitude1').value
+        );
+        const latitude2 = parseFloat(
+          document.getElementById('latitude2').value
+        );
+        const longitude2 = parseFloat(
+          document.getElementById('longitude2').value
+        );
+
+        // Check if input values are valid
+        if (
+          isNaN(latitude1) ||
+          isNaN(longitude1) ||
+          isNaN(latitude2) ||
+          isNaN(longitude2)
+        ) {
+          alert('Please enter valid latitude and longitude for both markers.');
+          return;
+        }
+
+        // Remove previous markers if they exist
+        if (marker1) {
+          map.removeLayer(marker1);
+        }
+        if (marker2) {
+          map.removeLayer(marker2);
+        }
+        if (distanceMarker) {
+          map.removeLayer(distanceMarker);
+        }
+
+        // Create new markers
+        marker1 = L.marker([latitude1, longitude1]).addTo(map);
+        marker1.bindPopup(
+          `Marker 1<br>Latitude: ${latitude1}<br>Longitude: ${longitude1}`
+        );
+
+        marker2 = L.marker([latitude2, longitude2]).addTo(map);
+        marker2.bindPopup('Marker 2');
+
+        // Create a polyline to represent the distance between marker1 and marker2
+        const polyline = L.polyline(
+          [
+            [latitude1, longitude1],
+            [latitude2, longitude2],
+          ],
+          {
+            color: 'blue', // Line color
+            weight: 2, // Line thickness
+          }
+        ).addTo(map);
+
+        // Calculate the distance between marker1 and marker2
+        const distance = calculateDistance(
+          latitude1,
+          longitude1,
+          latitude2,
+          longitude2
+        );
+
+        // Update the distance in the HTML
+        const distanceElement = document.getElementById('distance');
+        distanceElement.textContent = `Distance between marker1 and marker2: ${distance.toFixed(
+          2
+        )} kilometers`;
+
+        // Calculate the midpoint
+        const midpoint = polyline.getCenter();
+
+        // Create a marker for the distance label
+        const distanceIcon = L.divIcon({
+          className: 'distance-label',
+          html: `${distance.toFixed(2)}`,
+        });
+        distanceMarker = L.marker(midpoint, { icon: distanceIcon }).addTo(map);
+      }
+
+      // Add a click event listener to the "Calculate Distance" button
+      document
+        .getElementById('calculateDistance')
+        .addEventListener('click', updateMarkersAndCalculateDistance);
+    </script>
+  </body>
+</html>
