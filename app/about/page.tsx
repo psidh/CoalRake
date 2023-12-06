@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/Footer';
 import { createGlobalStyle } from 'styled-components';
-import Features from '../components/Features';
-import Chat from '../components/Chat';
-import ProblemSolutionTable from '../components/PS';
-import DemurrageCalculator from '../components/BeerCharges';
+import Features from '../../components/Features';
+
+import ProblemSolutionTable from '../../components/PS';
+import DemurrageCalculator from '../../components/BeerCharges';
 import Image from 'next/image';
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -18,20 +18,18 @@ const About: React.FC = () => {
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif' }}>
       <NavBar />
-      
+
       <div className="min-h-fit">
         {/* Hero Section */}
         <div className="bg-yellow-500 text-white py-12">
           <div className="container mx-auto flex flex-col lg:flex-row items-center">
             <div className=" text-center lg:text-left lg:pr-8">
-              <h1 className="text-4xl font-semibold mb-4">
-                Who are WE ?
-              </h1>
+              <h1 className="text-4xl font-semibold mb-4">Who are WE ?</h1>
               <p className="text-lg mb-6">
-              CRN Coal Rake Navigators is a team of dedicated professionals
-            specializing in coal logistics optimization. We combine innovative
-            technology and data-driven solutions to revolutionize the coal
-            transportation industry.
+                CRN Coal Rake Navigators is a team of dedicated professionals
+                specializing in coal logistics optimization. We combine
+                innovative technology and data-driven solutions to revolutionize
+                the coal transportation industry.
               </p>
               <a
                 href="/login"
@@ -63,7 +61,7 @@ const About: React.FC = () => {
         <div className="flex flex-col md:grid-cols-2 gap-8 my-8">
           <div className="rounded-lg my-2 p-4 shadow-md">
             <img
-              src="/about/ps.png" 
+              src="/about/ps.png"
               alt="problem statement picture here"
               className="rounded-lg my-4"
             />
@@ -86,7 +84,7 @@ const About: React.FC = () => {
         </section>
       </div>
       <Features />
-      <Chat />
+
       <Footer />
     </div>
   );

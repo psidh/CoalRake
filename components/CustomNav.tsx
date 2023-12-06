@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation.js';
 import { getAuth, signOut } from 'firebase/auth';
-import { auth } from '../config.js';
+import { auth } from '../app/config.js';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

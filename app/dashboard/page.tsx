@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
-import CustomNav from '../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
-import Chat from '../components/Chat';
+import Footer from '../../components/Footer';
+import CustomNav from '../../components/CustomNav'; // Replace './CustomNav' with the actual path to your 'customNav' component.
+
 // Define a type for your data
 interface CoalData {
   region: string;
@@ -209,7 +209,7 @@ const Dashboard = () => {
           )}
         </div>
       </div>
-      <Chat />
+
       <Footer />
     </div>
   );

@@ -1,14 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import { AiOutlineSearch } from 'react-icons/ai';
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/Footer';
 import { auth } from '../config.js';
 import { useRouter } from 'next/navigation.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
 import { useMediaQuery } from 'react-responsive'; // Import useMediaQuery
-import Chat from '../components/Chat';
 
 const Login: React.FC = () => {
   const [position, setPosition] = useState(0);
@@ -171,7 +169,7 @@ const Login: React.FC = () => {
           </div>
         </div>
       </main>
-      <Chat />
+
       <Footer />
     </div>
   );

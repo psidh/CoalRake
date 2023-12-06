@@ -1,5 +1,5 @@
 'use client';
-import { auth } from '../config.js';
+import { auth } from '../app/config.js';
 import { useRouter } from 'next/navigation.js';
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
